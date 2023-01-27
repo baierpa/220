@@ -54,3 +54,55 @@ for i in one_to_five_outer:
 
 # + - * / **
 math.sqrt(9)
+#  dot notation
+print(math.pi)
+print(math.e)
+result = math.pow(3, 4) # 3 ** 4
+print(result)
+
+# floating point data type
+x = 3.4
+y = 3
+# + - * /
+res = 2.5 + 5.9
+print(res)
+# ints -> int, floats -> float, int & float -> float
+print(3 * 5)
+print(3.0 * 5.9)
+print(3 + 4.7)
+print(3 + 4.0)
+# exception! / division
+res = 6 / 3 # / floating point division operator
+print( res )
+res = 6 // 3 # // integer divsion operator
+range(res)
+print(res)
+
+res = 6.7 // 3 # truncated result
+print(res)
+
+# int(), float()
+my_int = int(6 / 2)
+print(my_int)
+
+my_float = float(7)
+print(my_float)
+
+my_int = int(3.7)
+print(my_int)
+
+# round()
+res = round(4.49384039874) # round down <= .5
+print(res)
+res = round(4.5100000) # round up > .5
+print(res)
+res = round(4.97898769, 3)
+print(res)
+
+# + - * / // **
+# % mod - modulus - modulo -> remainder operator
+
+month_nums = range(144)
+for month in month_nums:
+    month_num = (month % 12) + 1
+    print(month_num, end=' ')
