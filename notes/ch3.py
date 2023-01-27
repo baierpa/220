@@ -46,4 +46,63 @@ inner_five = range(1, 6)
 # + - * / **
 result = math.sqrt(9)
 print(result)
-# sqrt(9)
+# dot notation
+print(math.pi)
+print(math.e)
+power = math.pow(4, 7) # 4 ** 7\
+
+# float - numbers with decimals
+# + - * / **
+# ints -> ints, floats -> floats, int & float -> float
+res = 3 * 7
+print(res)
+range(res)
+
+res = 3.0 * 7.0
+print(res)
+
+res = 3.0 + 7
+print(res)
+
+# EXCEPT! /
+res = 6 / 2 # floating point division operator
+print(res)
+
+res = 6 // 2 # integer division operator
+print(res)
+
+res = 7 // 2 # truncates!
+print(res)
+
+res = 7.5 // 2 # truncates!
+print(res)
+
+# int(), float()
+my_int = int(4.7)
+print(my_int)
+
+my_float = float(7)
+print(my_float)
+
+print(7 * 1.0)
+
+# round()
+x = round(4.7) # >= 5 rounds up
+print(x)
+x = round(4.4) # < 5 rounds down
+print(x)
+
+x = round(4.7, 2)
+print(x)
+
+x = round(4.509, 2)
+print(x)
+
+# + - * / // **
+
+# % - mod - modulus - modulo -> remainder operator
+
+months = range(120)
+for i in months:
+    month_num = (i % 12) + 1
+    print(month_num, end=' ')
