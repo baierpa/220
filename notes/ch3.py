@@ -104,3 +104,25 @@ For example:
 
 3/3 + 4/6 + 5/9 + 6/12 + 7/15 + …
 '''
+print()
+n_input = input('how many terms should we sum? ')
+n = eval(n_input)
+series_range = range(n)
+total = 0
+# OPTION 2
+for i in series_range:
+    num = i + 3
+    den = 3 * i + 3
+    print(num, den)
+    total = total + num / den
+print(num, den)
+
+# OPTION 1
+# num = 2
+# den = 0
+# for i in series_range:
+#     num = num + 1
+#     den = den + 3
+#     total = total + num / den
+# print(total)
+
