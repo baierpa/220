@@ -106,3 +106,27 @@ month_nums = range(144)
 for month in month_nums:
     month_num = (month % 12) + 1
     print(month_num, end=' ')
+
+'''
+Write a function that asks a user to enter an integer n,
+calculates the sum of n terms in the series below, then prints the resulting sum.
+For example:
+    a user entering 1 would print 1.0 or
+    a user entering 2 would print 1.6666666666666665.
+
+*Note the series is not given to you.
+
+3/3 + 4/6 + 5/9 + 6/12 + 7/15 + …
+'''
+print()
+n_input = input('how many terms should we add? ')
+n = eval(n_input)
+terms = range(n)
+total = 0
+num = 2
+den = 0
+for i in terms:
+    num = num + 1
+    den = den + 3
+    total = total + num / den
+print(total)
