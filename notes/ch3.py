@@ -104,18 +104,18 @@ For example:
 
 3/3 + 4/6 + 5/9 + 6/12 + 7/15 + …
 '''
-print()
-n_input = input('how many terms should we sum? ')
-n = eval(n_input)
-series_range = range(n)
-total = 0
-# OPTION 2
-for i in series_range:
-    num = i + 3
-    den = 3 * i + 3
-    print(num, den)
-    total = total + num / den
-print(num, den)
+# print()
+# n_input = input('how many terms should we sum? ')
+# n = eval(n_input)
+# series_range = range(n)
+# total = 0
+# # OPTION 2
+# for i in series_range:
+#     num = i + 3
+#     den = 3 * i + 3
+#     print(num, den)
+#     total = total + num / den
+# print(num, den)
 
 # OPTION 1
 # num = 2
@@ -126,3 +126,21 @@ print(num, den)
 #     total = total + num / den
 # print(total)
 
+'''
+Write a function, sequence(), that asks the user for the number of terms in a series, 
+then prints the following pattern for the appropriate number of terms.
+1 1 3 3 5 5 7
+'''
+print()
+print()
+print()
+print()
+user_input = 10
+# term_range = range(1, user_input + 1)
+# # for i in term_range:
+# #     print((i + i % 2) - 1, end=' ')
+second_term_range = range(user_input)
+term = 1
+for i in second_term_range:
+    print(term, end=' ')
+    term = term + (i % 2 * 2)
