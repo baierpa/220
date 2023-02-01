@@ -119,14 +119,39 @@ For example:
 3/3 + 4/6 + 5/9 + 6/12 + 7/15 + …
 '''
 print()
-n_input = input('how many terms should we add? ')
-n = eval(n_input)
-terms = range(n)
-total = 0
-num = 2
-den = 0
-for i in terms:
-    num = num + 1
-    den = den + 3
-    total = total + num / den
-print(total)
+# n_input = input('how many terms should we add? ')
+# n = eval(n_input)
+# terms = range(n)
+# total = 0
+# num = 2
+# den = 0
+# for i in terms:
+#     num = num + 1
+#     den = den + 3
+#     total = total + num / den
+# print(total)
+
+'''
+Write a function, sequence(), that asks the user for the number of terms in a series, 
+then prints the following pattern for the appropriate number of terms.
+1 1 3 3 5 5 7
+'''
+print()
+print()
+print()
+print()
+print()
+
+user_input = 10
+# series_range = range(1, user_input + 1)
+# for i in series_range:
+#     print((i + i % 2) - 1, end=' ')
+
+new_range = range(user_input)
+term = 1
+for i in new_range:
+    print(term, end=' ')
+    term = term + (i % 2) * 2 
+
+
+
