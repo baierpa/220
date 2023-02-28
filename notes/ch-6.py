@@ -47,13 +47,25 @@ def distance(p1, p2):
 click1 = Point(7, 8)
 click2 = Point(1, 2)
 d = distance(click1, click2)
-print(d)
+# print(d)
 
+# does not mutate!
 def add_one(my_list):
     new_list = []
     for num in my_list:
         new_list.append(num + 1)
     return new_list
 
+def add_one_mutate(my_list):
+    indexes = range(0, len(my_list))
+    for i in indexes:
+        my_list[i] = my_list[i] + 1
+
 push_ups = [1,2,3,4,5]
-add_one(push_ups)
+new_push_ups = add_one(push_ups)
+print(push_ups)
+print(new_push_ups)
+
+add_one_mutate(push_ups)
+print(push_ups)
+# parameters vs. arguments
