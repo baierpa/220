@@ -1,3 +1,5 @@
+from random import randint
+
 # Control Structures
 # Conditional
 # booleans
@@ -27,24 +29,28 @@ if 7 == 7:
 # if even, move left
 # if odd, move right
 
-from random import randint
-
 def get_campers():
     campers = []
     number_of_campers = range(50)
     for i in number_of_campers:
-        random_age = randint(8, 16)
+        random_age = randint(8, 18)
         campers.append(random_age)
     return campers
 
-all_campers = get_campers()
-left = []
-right = []
-for camper in all_campers:
-    if camper % 2 == 0:
-        left.append(camper)
-    if camper % 2 == 1:
-        right.append(camper)
-print(left)
-print(right)
+caterpillars = [] # up to age 10 (not including 10)
+butterflies = [] # age 10 - 13 (not including 13)
+eagles = [] # age 13 and over
+
+campers = get_campers()
+for camper_age in campers:
+    if camper_age < 10:
+        caterpillars.append(camper_age)
+    elif camper_age < 13:
+        butterflies.append(camper_age)
+    else:
+        eagles.append(camper_age)
+print(caterpillars)
+print(butterflies)
+print(eagles)
+
 
