@@ -41,10 +41,29 @@ camper_ages = get_campers()
 for camper_age in camper_ages:
     if camper_age < 10:
         catipillars.append(camper_age)
+    elif camper_age < 13:
+        butterflies.append(camper_age)
     else:
-        if camper_age < 13:
-            butterflies.append(camper_age)
-        else:
-            eagles.append(camper_age)
+        eagles.append(camper_age)
 
-print(catipillars)
+# split into random teams
+# red, green, blue
+teams = []
+
+
+for camper in camper_ages:
+    team_num = randint(0, 2)
+    if team_num == 0:
+        teams.append('red')
+    elif team_num == 1:
+        teams.append('green')
+    else:
+        teams.append('blue')
+index = 0
+for camper in camper_ages:
+    team_name = teams[index]
+    if team_name == 'green':
+        print(camper, team_name)
+    index = index + 1
+
+# lexicographically compared
