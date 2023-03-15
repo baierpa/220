@@ -46,6 +46,30 @@ for camper_age in campers:
     else:
         eagles.append(camper_age)
 
-print(caterpillars)
-print(butterflies)
-print(eagles)
+# divide into random teams
+# red, green, blue
+
+teams = []
+# red = [] # 0
+# green = [] # 1
+# blue = [] # 2
+
+for camper in campers:
+    random_team_number = randint(0, 2)
+    if random_team_number == 0:
+        teams.append('red')
+    elif random_team_number == 1:
+        teams.append('green')
+    else:
+        teams.append('blue')
+i = 0
+for camper in campers:
+    team_color = teams[i]
+    if team_color == 'green':
+        print(camper, team_color)
+    i = i + 1
+
+# lexicographically compared
+
+
+
