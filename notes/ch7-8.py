@@ -5,4 +5,11 @@
 
 # boolean operators
 # and, or, not
-# start with order of operations!
+
+a = True
+b = True
+c = False
+print(a or not b and c)
+a or False and c
+a or False
+True
