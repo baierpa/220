@@ -33,8 +33,8 @@ def is_letter(character):
 
 def is_upper_case(word):
     for character in word:
-        # if not(character >= 'A' and character <= 'Z'):
-        if not(character >= 'A') or not(character <= 'Z'):
+        if is_letter(character) and not(character >= 'A' and character <= 'Z'):
+        # if not(character >= 'A') or not(character <= 'Z'):
             return False
     return True
 
@@ -49,3 +49,5 @@ while x < 10:
     print(x)
     x = x + 1
 print('done!')
+
+
