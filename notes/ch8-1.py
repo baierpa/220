@@ -27,4 +27,23 @@ def file_while():
         line = file.readline()
         print(line, end='')
 
-file_while()
+# file_while()
+
+def password_check():
+    while True:
+        password = 'helloworld!'
+        user_password = input("enter password: ")
+        if user_password == password:
+            print('you may enter!')
+            break
+        else:
+            print('incorrect!')
+    print('goodbye')
+
+# password_check()
+
+r = range(100)
+for i in r:
+    if i > 50:
+        break
+    print(i)
