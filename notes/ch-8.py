@@ -20,17 +20,17 @@ def is_letter(character):
 
 def is_upper_case(word):
     for character in word:
-        if not(character >= 'A' and character <= 'Z'):
+        if is_letter(character) and not(character >= 'A' and character <= 'Z'):
             return False
     return True
 
 # test cases
-# print(is_upper_case("ANYTHING"), "true")
-# print(is_upper_case("Anything"), "false")
-# print(is_upper_case("anything"), "false")
-# print(is_upper_case("1234567890"), "false")
-# print(is_upper_case("!!!!"), "false")
-# print(is_upper_case("HELLO WORLD!"), "true")
+print(is_upper_case("ANYTHING"), "true")
+print(is_upper_case("Anything"), "false")
+print(is_upper_case("anything"), "false")
+print(is_upper_case("1234567890"), "false")
+print(is_upper_case("!!!!"), "false")
+print(is_upper_case("HELLO WORLD!"), "true")
 
 x = 0
 while x < 10:
