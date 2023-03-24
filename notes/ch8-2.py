@@ -30,6 +30,54 @@ x = 5
 x > 10 and math.sqrt(-1)
 print('hi')
 
-x = [False]
-if x:
-    print('ok')
+def truthy_falsy():
+
+    x = [False]
+    if x:
+        print('ok')
+
+    x = True and False
+    print(x)
+
+    # T and T
+    x = 3 and "hello"
+    print(x)
+    # T and F
+    x = "hi" and []
+    print(x)
+    # F and T
+    x = 0 and [1,2,3,4,5]
+    print(x)
+    # F and F
+    x = [] and ''
+    print(x)
+
+    # T or T
+    x = 7 or 'hey'
+    print(x)
+    # T or F
+    x = [1,2,3] or ''
+    print(x)
+    # F or T
+    x = '' or 99
+    print(x)
+    # F or F
+    x = '' or 0
+    print(x)
+
+def transfer():
+    answer = input('do you want to transfer all of your money to us (yes/no)? ')
+    first_letter = answer[0]
+    if first_letter == 'Y' and first_letter == 'y':
+        print("nice! transferring...")
+    else:
+        print('whatever. see ya.')
+
+def ice_cream():
+    ans = input("what flavor ice-cream would you like [vanilla]: ")
+    # if ans:
+    #     flavor = ans
+    # else:
+    #     flavor = 'vanilla'
+    ans = ans or 'vanilla'
+    print('one', ans, 'ice-cream comin up!')
