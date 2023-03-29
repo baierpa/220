@@ -15,5 +15,39 @@ class Dice:
         self.value = new_value
 
     def roll(self):
-        random_value = randint(1, self.sides)
+        # self = die1
+        random_value = self.__get_random_value()
         self.value = random_value
+
+    def __get_random_value(self):
+        return randint(1, self.sides)
+
+
+class DiceGame:
+    #  constructor
+    def __init__(self, game_dice, num_players, end_score):
+        self.round = 1
+        self.end_score = end_score
+
+    #   game_dice = [Dice(6)]
+    #   game = DiceGame(game_dice, number of players, end score)
+    #   how do we initialize/start?
+    #       - number dice
+    #       - number of players
+    #       - end score
+
+    # instance variables
+    #   what is a game? what data does it store?
+    #       - player scores (list[int])
+    #       - players (list[str]) - ex: ["player1", "player2"...]
+    #       - round (int)
+    #       - end score (int)
+    #       - dice (list[Dice])
+
+    # methods
+    #   what does a game do?
+    #       - play
+    #       - report the scores
+    #       - rolls
+    #       - check for winners
+    pass
