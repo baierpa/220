@@ -33,7 +33,7 @@ die2 = Dice(6)
 
 while True:
     input('hit enter to roll')
-    die1.roll()
+    die1.roll() # die1.roll(die1)
     die2.roll()
     print(die1.get_value())
     print(die2.get_value())
