@@ -29,8 +29,12 @@ c = Circle(p, 23)
 # die1_value = die1.get_value()
 # print(die1_value)
 
+def print_hi():
+    print('hi')
+
 die1 = Dice(6)
 die2 = Dice(6)
+print_hi()
 while True:
     input('hit enter to roll')
     die1.roll()
