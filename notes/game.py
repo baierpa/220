@@ -28,6 +28,46 @@ class DiceGame:
     def __init__(self, game_dice, num_players, end_score):
         self.round = 1
         self.end_score = end_score
+        self.dice = game_dice
+        self.scores = []
+        self.players = []
+        player_range = range(num_players)
+        for i in player_range:
+            self.scores.append(0)
+            self.players.append(f'player{i + 1}') # player1, player2, ...
+
+    def play(self):
+        while not self.__game_over():
+            print(f'round {self.round}')
+            player_index = 0
+            for player in self.players:
+                input(f'{player} turn to roll')
+                # roll
+                total = 0
+                for die in self.dice:
+                    die.roll()
+                    print(die.get_value(), end=' ')
+                    total = total + die.get_value()
+                self.scores[player_index] = self.scores[player_index] + total
+                print(f' - total roll: {total}')
+                player_index = (player_index + 1) % len(self.players) # ensures index is always in range
+                if self.__game_over():
+                    break
+            self.round = self.round + 1
+        # while game is not over
+        #   print the round
+        #   for each player
+        #       print the player's name
+        #       player rolls
+        #       total their roll
+        #       print their roll
+        #       check if anyone won
+
+    def __game_over(self):
+        for score in self.scores:
+            if score >= self.end_score:
+                return True
+        return False
 
     #   game_dice = [Dice(6)]
     #   game = DiceGame(game_dice, number of players, end score)
@@ -50,4 +90,3 @@ class DiceGame:
     #       - report the scores
     #       - rolls
     #       - check for winners
-    pass
