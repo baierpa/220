@@ -1,20 +1,34 @@
 from random import randint
 
 class Dice:
-    # constructor
+    """
+    This represents a Die that would be used in a game
+    """
     def __init__(self, num_sides):
+        """
+        Constructs a Dice object based on num_sides with a default value of 1
+        """
         self.sides = num_sides
         self.value = 1
 
     # methods
     def get_value(self):
+        """
+        gets the value of the Dice object
+        """
         return self.value
 
     def set_value(self, new_value):
+        """
+        sets the value of the Dice object (cheater!)
+        """
         self.value = new_value
 
-    # public method
     def roll(self):
+        """
+        Simulates rolling a Die
+        Sets the value to a random number between 1 and the number of sides
+        """
         # self = die1
         random_number = self.__get_random_number()
         self.value = random_number
@@ -49,8 +63,26 @@ class DiceGame:
 
     def play(self):
         while not self.game_over():
-            # test game over!
-            print(self.scores)
+            print(f'----------------- round {self.round} -----------------')
+            scores_index = 0
+            for player in self.players:
+                input(f"{player}'s turn to roll")
+                # rolling the dice
+                total_roll = 0
+                for die in self.dice:
+                    die.roll()
+                    total_roll = total_roll + die.get_value()
+                    print(die.get_value(), end=' ')
+                # setting player score
+                player_score = self.scores[scores_index]
+                self.scores[scores_index] = player_score + total_roll
+                scores_index = scores_index + 1
+                print(f'- Total: {total_roll}!')
+                if self.game_over():
+                    break
+            self.__print_summary()
+            self.round = self.round + 1
+        print('game over!')
         # while the game not over
         #   print the round
         #   for each player
@@ -71,9 +103,16 @@ class DiceGame:
                 return True
         return False
 
+    def __print_summary(self):
+        scores_index = 0
+        player_scores = []
+        for player in self.players:
+            player_scores.append(f'{player}: {self.scores[scores_index]}')
+            scores_index = scores_index + 1
+        scores_string = ' | '.join(player_scores)
+        print(scores_string)
     # methods -  what can a DiceGame do?
     #   - tally scores
     #   - rolls the dice
     #   - check for winners
     #   - play
-    pass
