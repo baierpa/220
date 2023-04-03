@@ -1,20 +1,35 @@
 from random import randint
 
 class Dice:
-
+    """
+    This class represents a single Die used for playing games
+    """
     # define constructor
     def __init__(self, sides):
+        """
+        Takes the number of sides the die should have as a parameter.
+        Creates a Die object with an initial value of 1
+        """
         self.sides = sides
         self.value = 1
 
     # define our methods
     def get_value(self):
+        """
+        returns the die's value
+        """
         return self.value
 
     def set_value(self, new_value):
+        """
+        sets the die's value (cheater!)
+        """
         self.value = new_value
 
     def roll(self):
+        """
+        rolls the die, setting its value to a random number between 1 and the number of sides
+        """
         # self = die1
         random_value = self.__get_random_value()
         self.value = random_value
@@ -38,10 +53,10 @@ class DiceGame:
 
     def play(self):
         while not self.__game_over():
-            print(f'round {self.round}')
+            print(f'------------------------ round {self.round} ------------------------')
             player_index = 0
             for player in self.players:
-                input(f'{player} turn to roll')
+                input(f"{player}'s turn to roll")
                 # roll
                 total = 0
                 for die in self.dice:
@@ -54,6 +69,8 @@ class DiceGame:
                 if self.__game_over():
                     break
             self.round = self.round + 1
+            self.__print_scores()
+        print('Game over!')
         # while game is not over
         #   print the round
         #   for each player
@@ -62,12 +79,22 @@ class DiceGame:
         #       total their roll
         #       print their roll
         #       check if anyone won
+    #       report all scores
 
     def __game_over(self):
         for score in self.scores:
             if score >= self.end_score:
                 return True
         return False
+
+    def __print_scores(self):
+        player_scores = []
+        index = 0
+        for player in self.players:
+            player_score = f'{player}: {self.scores[index]}'
+            index = index + 1
+            player_scores.append(player_score)
+        print(' | '.join(player_scores))
 
     #   game_dice = [Dice(6)]
     #   game = DiceGame(game_dice, number of players, end score)
