@@ -37,6 +37,9 @@ class Dice:
     def __get_random_value(self):
         return randint(1, self.sides)
 
+    def get_sides(self):
+        return self.sides
+
 
 class DiceGame:
     #  constructor
