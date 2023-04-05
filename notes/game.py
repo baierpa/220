@@ -38,6 +38,9 @@ class Dice:
     def __get_random_number(self):
         return randint(1, self.sides)
 
+    def get_sides(self):
+        return self.sides
+
 class DiceGame:
     # constructor - how to create/start the game
     def __init__(self, number_players, winning_score, dice):
