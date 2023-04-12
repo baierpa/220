@@ -51,3 +51,46 @@ print((1,2,3) + (4,5,6))
 # {} - dictionary
 names = ['harry', 'halie', 'heather']
 names_dictionary = {0: 'harry', 1: 'halie', 2: 'heather'}
+
+print(names[0])
+print(names_dictionary[0])
+
+families = {'smith': ['sam', 'sally', 'steve']}
+names = families['smith']
+print(names)
+families['jones'] = ['jane', 'jan', 'jim']
+print(families)
+families['able'] = ['alan', 'anna', 'ava']
+print(families)
+
+# in
+family_name = 'smith'
+has_family_name = family_name in families
+if has_family_name:
+    family_members = families[family_name]
+    print(f'the {family_name} family exist!')
+    print(f'they are: {family_members}')
+else:
+    print(f'{family_name} family not found')
+
+# keys(), values(), items()
+# keys() - returns a sequence of keys from the dictionary
+family_names = families.keys()
+for key in family_names:
+    print(families[key])
+# family_names[0] no!
+family_names_list = list(family_names)
+family_names_list[0]
+print('------------------------------------------')
+# values()
+family_members = families.values()
+for member in family_members:
+    print(member)
+print('-------------------------------------')
+# items() - return a sequence of tuples that are key, value pairs
+family_unit = families.items()
+for family in family_unit:
+    last_name = family[0]
+    first_names = family[1]
+    print(first_names[0])
+    print(first_names[1])
