@@ -89,8 +89,16 @@ for member in family_members:
 print('-------------------------------------')
 # items() - return a sequence of tuples that are key, value pairs
 family_unit = families.items()
-for family in family_unit:
-    last_name = family[0]
-    first_names = family[1]
-    print(first_names[0])
-    print(first_names[1])
+families_list = list(family_unit)
+print(families_list)
+# for family in family_unit:
+#     last_name = family[0]
+#     first_names = family[1]
+#     print(first_names[0])
+#     print(first_names[1])
+
+print(families.get('jones1'))
+del(families['smith'])
+# families.clear()
+print(families)
+
